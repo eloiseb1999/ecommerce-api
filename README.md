@@ -1,22 +1,31 @@
 # E-commerce Back-End API
 
+![Java](https://img.shields.io/badge/Java-17-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![Spring Security](https://img.shields.io/badge/Spring%20Security-JWT-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-7-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=flat-square&logo=apachemaven&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Swagger](https://img.shields.io/badge/OpenAPI-Swagger-85EA2D?style=flat-square&logo=swagger&logoColor=black)
+![JUnit5](https://img.shields.io/badge/JUnit5-Mockito-25A162?style=flat-square&logo=junit5&logoColor=white)
+
 API REST para um backend de e-commerce, desenvolvida em Java 17 com Spring Boot 3, persistência em MongoDB e autenticação stateless via JWT com controle de acesso por papéis (ADMIN e USER).
 
 O projeto cobre o fluxo completo de um e-commerce simplificado: catálogo de produtos e categorias, carrinho de compras por usuário, fechamento de pedidos com baixa de estoque e um painel administrativo para gestão de pedidos.
 
 ## Funcionalidades
 
-- Autenticação e autorização com JWT (registro, login e roles ADMIN/USER)
-- Catálogo de produtos: CRUD completo, paginação e filtros por categoria, nome e faixa de preço
-- Categorias: CRUD completo
-- Carrinho de compras por usuário: adição, atualização de quantidade, remoção de item e limpeza do carrinho
-- Checkout: geração de pedido a partir do carrinho, validação e baixa de estoque, histórico de pedidos por usuário
-- Painel administrativo: listagem de todos os pedidos e atualização de status (PENDING, PAID, SHIPPED, DELIVERED, CANCELED)
-- Tratamento de erros centralizado, com respostas de erro padronizadas
-- Documentação interativa via Swagger/OpenAPI
-- Seed automático de um usuário administrador e categorias de exemplo na inicialização
-- Testes unitários (JUnit 5 e Mockito) para as regras de negócio principais
-- Dockerfile e docker-compose para execução da API junto com o MongoDB
+→ Autenticação e autorização com JWT (registro, login e roles ADMIN/USER)  
+→ Catálogo de produtos: CRUD completo, paginação e filtros por categoria, nome e faixa de preço  
+→ Categorias: CRUD completo  
+→ Carrinho de compras por usuário: adição, atualização de quantidade, remoção de item e limpeza do carrinho  
+→ Checkout: geração de pedido a partir do carrinho, validação e baixa de estoque, histórico de pedidos por usuário  
+→ Painel administrativo: listagem de todos os pedidos e atualização de status (PENDING, PAID, SHIPPED, DELIVERED, CANCELED)  
+→ Tratamento de erros centralizado, com respostas de erro padronizadas  
+→ Documentação interativa via Swagger/OpenAPI  
+→ Seed automático de um usuário administrador e categorias de exemplo na inicialização  
+→ Testes unitários (JUnit 5 e Mockito) para as regras de negócio principais  
+→ Dockerfile e docker-compose para execução da API junto com o MongoDB  
 
 ## Stack técnica
 
@@ -76,8 +85,8 @@ Por padrão, a aplicação se conecta em `mongodb://localhost:27017/ecommerce_db
 
 Na primeira execução, a aplicação cria automaticamente:
 
-- Administrador: `admin@ecommerce.com` / `admin123`
-- Categorias de exemplo: Eletrônicos, Livros, Roupas
+→ Administrador: `admin@ecommerce.com` / `admin123`  
+→ Categorias de exemplo: Eletrônicos, Livros, Roupas  
 
 Esse comportamento pode ser desativado com a variável de ambiente `SEED_DATA=false`.
 
@@ -120,6 +129,14 @@ Uma coleção do Postman também está disponível em [`postman/ecommerce-backen
 ```bash
 mvn test
 ```
+
+## Possíveis evoluções
+
+→ Integração de pagamento simulada (mock de gateway)  
+→ Upload de imagens de produto (S3 ou serviço equivalente)  
+→ Cache com Redis para o catálogo de produtos  
+→ Testes de integração com Testcontainers (MongoDB em container)  
+→ Microsserviço em Python para recomendação de produtos, consumido via REST pelo backend Java  
 
 ## Licença
 
