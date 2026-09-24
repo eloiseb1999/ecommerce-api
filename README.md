@@ -121,14 +121,6 @@ Uma coleção do Postman também está disponível em [`postman/ecommerce-backen
 mvn test
 ```
 
-## Possíveis evoluções
-
-- Integração de pagamento simulada (mock de gateway)
-- Upload de imagens de produto (S3 ou serviço equivalente)
-- Cache com Redis para o catálogo de produtos
-- Testes de integração com Testcontainers (MongoDB em container)
-- Microsserviço em Python para recomendação de produtos, consumido via REST pelo backend Java
-
 ## Licença
 
 Projeto desenvolvido para fins de portfólio.
