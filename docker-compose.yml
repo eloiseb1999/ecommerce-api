@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: ecommerce-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  api:
+    build: .
+    container_name: ecommerce-api
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/ecommerce_db
+      JWT_SECRET: troqueEstaChaveSecretaPorUmaBemMaiorEAleatoriaAntesDeIrParaProducao1234567890
+      JWT_EXPIRATION_MS: 86400000
+      SEED_DATA: "true"
+
+volumes:
+  mongo_data:
